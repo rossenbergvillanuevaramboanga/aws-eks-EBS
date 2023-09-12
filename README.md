@@ -1,6 +1,6 @@
 # Deployments' Architecture
 
-![alt text](https://github.com/rossenbergvillanuevaramboanga/aws-eks-EBS/blob/main/images/mysql-architecture.jpg?raw=true)
+![alt text](https://github.com/rossenbergvillanuevaramboanga/aws-eks-EBS/blob/main/images/mysql-architecture-secrets.jpg?raw=true)
 
 ## What is the difference between a ClusterIP and a NodePort?
 ### ClusterIP
