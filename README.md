@@ -1,6 +1,6 @@
 # Deployments' Architecture
 
-![alt text](https://github.com/rossenbergvillanuevaramboanga/aws-eks-EBS/blob/using-secrets/images/mysql-architecture-secrets.jpg?raw=true)
+![alt text](https://github.com/rossenbergvillanuevaramboanga/aws-eks-EBS/blob/main/images/mysql-architecture-quotas-limits.jpg?raw=true)
 
 ## What is the difference between a ClusterIP and a NodePort?
 ### ClusterIP
@@ -48,3 +48,9 @@ This can be used to adopt liveness checks on slow starting containers, avoiding 
 - Check using HTTP GET Request
 - Check using TCP
 
+
+## Policies
+### Limit Ranges
+A LimitRange is a policy to constrain the resource allocations (limits and requests) that you can specify for each applicable object kind (such as Pod or PersistentVolumeClaim) in a namespace.
+### Resource Quotas
+A resource quota, defined by a ResourceQuota object, provides constraints that limit aggregate resource consumption per namespace. It can limit the quantity of objects that can be created in a namespace by type, as well as the total amount of compute resources that may be consumed by resources in that namespace.
