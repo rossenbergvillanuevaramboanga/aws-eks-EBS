@@ -31,5 +31,20 @@ To specify an init container for a Pod, add the initContainers field into the Po
 
 The status of the init containers is returned in .status.initContainerStatuses field as an array of the container statuses (similar to the .status.containerStatuses field).
 
+## Probes
+### Liveness Probe
+Kubernetes uses liveness probes to know when to restart a container.
+Liveness probes could catch a deadlock, where an application is running, but unable to make progress and restarting container helps in such state.
+### Readiness Probe
+Kubelet uses readiness probes to know when a container is ready to accept traffic.
+When a Pod is not ready, it is removed from Service Load Balancers based on this readiness probe signal. 
+### Startup Probe
+Kubelet uses startup probes to know when a container application has started.
+Firstly this probe disables liveness & readiness checks until it succeeds ensuring those pods don't interfere with app startup.
+This can be used to adopt liveness checks on slow starting containers, avoiding them getting killed by the kubelet before they are up and running.
 
+#### Options to define Probes
+- Check using Commands
+- Check using HTTP GET Request
+- Check using TCP
 
