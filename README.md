@@ -18,5 +18,18 @@ To enable dynamic storage provisioning based on storage class, the cluster admin
 #### Static Provisioning
 A cluster administrator creates a number of PVs. They carry the details of the real storage, which is available for use by cluster users. They exist in the Kubernetes API and are available for consumption.
 
+## Init Containers
+A Pod can have multiple containers running apps within it, but it can also have one or more init containers, which are run before the app containers are started.
+
+Init containers are exactly like regular containers, except:
+
+Init containers always run to completion.
+Each init container must complete successfully before the next one starts.
+If a Pod's init container fails, the kubelet repeatedly restarts that init container until it succeeds. However, if the Pod has a restartPolicy of Never, and an init container fails during startup of that Pod, Kubernetes treats the overall Pod as failed.
+
+To specify an init container for a Pod, add the initContainers field into the Pod specification, as an array of container items (similar to the app containers field and its contents). See Container in the API reference for more details.
+
+The status of the init containers is returned in .status.initContainerStatuses field as an array of the container statuses (similar to the .status.containerStatuses field).
+
 
 
